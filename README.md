@@ -325,7 +325,6 @@ At runtime, the MicroPython/OpenMV script running on Nicla Vision:
   * Optionally streams the annotated frames via **MJPEG** to a browser on the same network (**debug/demo only**, not required for normal helmet use)
   * Triggers:
 
-    * **Buzzer alerts**
     * Different **LED colors** for specific classes (e.g., `Stop`, `Go_slow`, `No_parking`, `Speed_limit`)
 
 This combination of real-time detection, visual overlays, and simple acoustic/visual alerts allows the Nicla Vision module to act as an **AI Helmet assistant** without any cloud processing.
