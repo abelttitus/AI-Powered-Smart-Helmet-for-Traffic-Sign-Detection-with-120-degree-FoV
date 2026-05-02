@@ -359,6 +359,9 @@ In future iterations, we plan to:
  * https://github.com/samy101/ai-helmet
  * ChatGPT
  * Claude AI
+
+## Course Details
+* CP330 Edge AI - https://www.samy101.com/edge-ai-26/
  
 
 ---
