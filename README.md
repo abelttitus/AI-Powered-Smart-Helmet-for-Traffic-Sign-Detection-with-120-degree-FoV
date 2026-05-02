@@ -1,4 +1,4 @@
-![AI Helmet Prototype](images/ai-helmet.jpg)
+
 
 # AI Powered Smart Helmet for Traffic Sign Detection with 120 degree FoV
 
@@ -292,7 +292,12 @@ On the held-out test set, the **unoptimized (float32)** model achieves:
 *Figure 3: Testing results.*
 
 ---
+## Model Performance
+ The performance of the model is evaluated using test dataset and various metrics were calculated. The model
+ has performed satisfactorily and the metrics are summarized below:
 
+ ![Results](images/model_performance.png)
+ 
 ## 🧩 Impulse Design (Edge Impulse)
 
 The complete impulse in Edge Impulse consists of:
