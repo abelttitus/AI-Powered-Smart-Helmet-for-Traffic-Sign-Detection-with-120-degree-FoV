@@ -344,6 +344,7 @@ In future iterations, we plan to:
 * Add GPS tagging to log sign locations
 * Helmet integration with vibration haptic alerts
 * Natural TTS voice (gTTS) with internet connectivity
+
   ---
  ## References
  * https://github.com/samy101/ai-helmet
