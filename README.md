@@ -330,10 +330,11 @@ This combination of real-time detection, visual overlays, and simple acoustic/vi
 
 Below are example frames from the real-time detection pipeline running on the AI Helmet prototype:
 ## Demo 1
-images/demo1.mp4
+<video src="images/demo1.mp4" width="400" controls></video>
+
 
 ## Demo 2
-images/demo_2.mp4
+<video src="images/demo_2.mp4" width="400" controls></video>
 
 ---
 ## Achievements
