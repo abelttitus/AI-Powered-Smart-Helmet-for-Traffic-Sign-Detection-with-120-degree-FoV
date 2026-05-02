@@ -339,10 +339,10 @@ Below are example frames from the real-time detection pipeline running on the AI
 ---
 
 ## Challenges
-*Multi-camera synchronization for 120° FoV
-*Edge AI resource constraints - Arduino Nicla Vision
-*Robustness in real-world conditions
-*Low-latency audio feedback
+* Multi-camera synchronization for 120° FoV
+* Edge AI resource constraints - Arduino Nicla Vision
+* Robustness in real-world conditions
+* Low-latency audio feedback
 ---
 ## Planned Improvements
 
