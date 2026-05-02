@@ -111,13 +111,7 @@ The prototype demonstrates an **end-to-end Edge Impulse pipeline**:
   * Writing and flashing MicroPython deployment scripts to Nicla Vision
 * 🐍 **MicroPython**
 
-  * On-device runtime controlling camera, and LEDs
-* 📦 **TensorFlow Lite (via Edge Impulse)**
 
-  * Dataset augmentation (cropping, color transforms, noise, etc.)
-* 🌐 **Web browser**
-
-  * Viewing the MJPEG debug stream during development
 ---
 
 ## 🧱 Hardware Platform
