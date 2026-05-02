@@ -333,7 +333,7 @@ Below are example frames from the real-time detection pipeline running on the AI
 [![Watch Video](https://img.youtube.com/vi/3o7pauZqX6U/0.jpg)](https://youtu.be/3o7pauZqX6U)
 
 ## Demo 2
-<video src="images/demo_2.mp4" width="400" controls></video>
+[![Watch Video](https://img.youtube.com/vi/hZljtHW5vYY/0.jpg)](https://youtu.be/hZljtHW5vYY)
 
 ---
 ## Achievements
