@@ -20,7 +20,7 @@ This Edge Impulse project implements a real-time, high PoV, on-device road sign 
 - **End-to-end Edge pipeline** – Complete workflow:  
   **on-device data collection → labeling & augmentation → FOMO training in Edge Impulse → deployment via OpenMV/MicroPython → real-time inference and alerting**
 
-- **Multi-modal safety feedback** – Provides instant alerts through **on-frame overlays**, **RGB LED indicators**, and a **buzzer**, along with **real-time audio feedback via Bluetooth using a text-to-speech system** for intuitive rider interaction.
+- **Multi-modal safety feedback** – Provides instant alerts through **on-frame overlays**, **RGB LED indicators**, along with **real-time audio feedback via Bluetooth using a text-to-speech system** for intuitive rider interaction.
 
 ---
 
