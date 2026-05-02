@@ -330,7 +330,7 @@ This combination of real-time detection, visual overlays, and simple acoustic/vi
 
 Below are example frames from the real-time detection pipeline running on the AI Helmet prototype:
 ## Demo 1
-<video src="images/demo1.mp4" width="400" controls></video>
+https://github.com/abelttitus/AI-Powered-Smart-Helmet-for-Traffic-Sign-Detection-with-120-degree-FoV/blob/main/images/demo1.mp4
 
 
 ## Demo 2
