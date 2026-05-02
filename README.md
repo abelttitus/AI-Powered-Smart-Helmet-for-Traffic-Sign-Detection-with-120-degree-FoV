@@ -70,7 +70,7 @@ The main objective is to develop a prototype AI Helmet module that:
 * Provides immediate feedback via:
 
   * Visual overlays (bounding boxes + labels)
-  * Simple alerts (buzzer + RGB LEDs)
+  * Audio feed back using Bluetooth speaker
 * Runs **entirely on-device** on a microcontroller-class edge platform (Arduino Nicla Vision), with **no cloud dependency**
 
 The prototype demonstrates an **end-to-end Edge Impulse pipeline**:
@@ -89,9 +89,6 @@ The prototype demonstrates an **end-to-end Edge Impulse pipeline**:
   * 1 MB RAM, 16 MB QSPI flash
   * Wi-Fi and IMU on board
 * 🔋 **USB Power Bank**
-
-  * To power the Nicla Vision on the helmet
-* 🔘 **Push Button**
 
   * For audio feedback 
 * 💡 **Bluetooth Speaker**
@@ -117,17 +114,11 @@ The prototype demonstrates an **end-to-end Edge Impulse pipeline**:
   * On-device runtime controlling camera, Wi-Fi, buzzer, and LEDs
 * 📦 **TensorFlow Lite (via Edge Impulse)**
 
-  * Inference engine for the deployed model
-* 🧰 **Roboflow**
-
   * Dataset augmentation (cropping, color transforms, noise, etc.)
 * 🌐 **Web browser**
 
   * Viewing the MJPEG debug stream during development
-
 ---
-
-
 
 ## 🧱 Hardware Platform
 
@@ -152,17 +143,13 @@ These capabilities make it possible to:
 
 Data collection is done directly **on the Nicla Vision** using the scripts in `data-collection/`:
 
-* A **push button** is wired to the board.
 * A **USB power bank** powers the setup for portable use.
 * A **MicroPython script** running on the Nicla Vision:
 
   * Captures an image from the onboard camera
   * Stores it in device memory each time the button is pressed
 
-Using this simple setup, we collected images of **real sign boards** around a university campus, from a perspective that approximates a **helmet-mounted camera**.
-
-![Data collection setup](images/data-collection-setup.png)
-*Figure 1: Data collection setup using Nicla Vision.*
+Using this simple setup, we collected images of **real sign boards** around the IISc.
 
 ---
 
@@ -170,7 +157,6 @@ Using this simple setup, we collected images of **real sign boards** around a un
 
 The captured images are imported into **Edge Impulse** for dataset preparation.
 
-To improve generalization, we apply a variety of data augmentations (via **Roboflow** and **Edge Impulse**):
 
 * Cropping and mild geometric transforms
 * Grayscale conversion and brightness/exposure changes
@@ -179,19 +165,16 @@ To improve generalization, we apply a variety of data augmentations (via **Robof
 
 **Sign-board classes:**
 
-* `Assembly point`
 * `Go slow`
 * `No honking`
-* `No parking`
 * `Parking`
 * `Road hump`
-* `Stop`
 * `Speed limit`
 
 **Dataset stats:**
 
-* ~60 images per sign class
-* **416 images total** across all classes
+* ~30 images per sign class
+* **172 images total** across all classes
 * An additional **background class** (added by Edge Impulse) represents scenes with **no sign board**, helping the model distinguish meaningful signs from ordinary road backgrounds.
 
 ---
@@ -200,7 +183,6 @@ To improve generalization, we apply a variety of data augmentations (via **Robof
 
 Bounding box annotation is carried out inside **Edge Impulse** using its labeling interface:
 
-* An **AI-assisted auto-labeler** (YOLO-based) is first used to propose bounding boxes and class labels.
 * All auto-generated labels are then **manually verified and corrected** where needed.
 
 This hybrid strategy significantly speeds up labeling while maintaining high annotation quality suitable for embedded object detection.
@@ -235,8 +217,8 @@ The model predicts **5 object classes** (non-background):
 
 ### Train / Test Split
 
-* **81%** of samples used for **training**
-* **19%** used for **testing**
+* **79%** of samples used for **training**
+* **21%** used for **testing**
 * **20% of the training set** is further reserved as a **validation set**
 
 ---
@@ -248,7 +230,7 @@ The Keras-based object detection block in Edge Impulse uses a **FOMO-specific tr
 * **Loss:** Weighted cross-entropy (using `object_weight` to emphasize objects vs. background)
 * **Epochs:** `100`
 * **Learning rate:** `0.001`
-* **Batch size:** `32`
+* **Batch size:** `128`
 * **Backbone width multiplier (alpha):** `0.35`
 * **Checkpointing:** Best weights selected based on **validation F1 score (`val_f1`)**
 
@@ -275,20 +257,6 @@ This corresponds to roughly:
 > **~16.3 frames per second (fps)**
 
 which is sufficient for real-time detection and alerting on the helmet.
-
-![Training Results](images/training-results.png)
-*Figure 2: Training results.*
-
-### Test Set (Unoptimized float32 Model)
-
-On the held-out test set, the **unoptimized (float32)** model achieves:
-
-* **F1 score (non-background):** `0.92`
-* **Precision (non-background):** `1.00`
-* **Recall (non-background):** `0.86`
-
-![Classification Results](images/classification-result.png)
-*Figure 3: Testing results.*
 
 ---
 ## Model Performance
@@ -336,7 +304,6 @@ The **final deployed script**:
 * Is based on auto-generated Edge Impulse code
 * Is enhanced with:
 
-  * **Alerting logic** (buzzer + RGB LEDs)
   * **Wi-Fi MJPEG streaming** (for debugging in a browser)
 
 ### Runtime Behavior
