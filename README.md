@@ -29,11 +29,10 @@ This Edge Impulse project implements a real-time, high PoV, on-device road sign 
 
 ```text
 .
-├── data-collection/       # Scripts for on-device image capture using Nicla Vision + push button
-├── dataset/               # Dataset references, class info, and augmentation notes
-├── deployment/
-│   └── OpenMV/            # MicroPython/OpenMV deployment script and model file for on-device inference & alerts
-├── images/                # Photos of the prototype and example detection outputs
+├── data_collection/       # Scripts for on-device image capture using Nicla Vision + push button
+├── dataset/               # Generated dataset organized in folders
+├── deployment/            # Contains Nicla Vision and Raspberry PI code 
+├── images/                # results
 └── README.md              # Project overview and documentation (this file)
 ````
 
