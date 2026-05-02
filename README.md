@@ -295,9 +295,7 @@ After training and validation:
 The **final deployed script**:
 
 * Is based on auto-generated Edge Impulse code
-* Is enhanced with:
-
-  * **Wi-Fi MJPEG streaming** (for debugging in a browser)
+* The final deployed scripts are available in `deployment` folder.
 
 ### Runtime Behavior
 
