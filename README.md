@@ -141,7 +141,6 @@ Data collection is done directly **on the Nicla Vision** using the scripts in `d
 * A **MicroPython script** running on the Nicla Vision:
 
   * Captures an image from the onboard camera
-  * Stores it in device memory each time the button is pressed
 
 Using this simple setup, we collected images of **real sign boards** around the IISc.
 
@@ -177,9 +176,9 @@ The captured images are imported into **Edge Impulse** for dataset preparation.
 
 Bounding box annotation is carried out inside **Edge Impulse** using its labeling interface:
 
-* All auto-generated labels are then **manually verified and corrected** where needed.
+* All labels are then **manually generated** where needed.
 
-This hybrid strategy significantly speeds up labeling while maintaining high annotation quality suitable for embedded object detection.
+This  strategy significantly speeds up labeling while maintaining high annotation quality suitable for embedded object detection.
 
 ---
 
