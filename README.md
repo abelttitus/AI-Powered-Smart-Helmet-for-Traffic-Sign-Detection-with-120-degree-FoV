@@ -94,7 +94,7 @@ The prototype demonstrates an **end-to-end Edge Impulse pipeline**:
 * 💡 **Bluetooth Speaker**
 
   * For visual alerting based on detected sign type
-* 🪖 **Two-wheeler Helmet with 120 degree Field of View**
+* 🪖 **Two-wheeler Helmet ( 3 cameras attached for 120 degree Field of View)**
 
   * To mount the Nicla Vision and power bank
 * 🔌 **Jumper wires / mounting accessories**
