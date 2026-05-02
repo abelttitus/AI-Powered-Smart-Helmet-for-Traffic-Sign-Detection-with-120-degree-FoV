@@ -59,7 +59,7 @@ However, two-wheeler riders often fail to notice or correctly interpret these si
 
 This project addresses that gap by exploring how existing helmets can be transformed into an **AI Helmet** using a compact, low-power Edge AI device. The system perceives its surroundings through computer vision, enhanced by a **three-camera setup providing a wide 120° field of view**, enabling reliable detection of important signboards in real time. It actively alerts riders through **real-time audio feedback via Bluetooth using text-to-speech**, ensuring critical information is conveyed instantly without requiring visual attention.
 
-![AI Helmet Prototype](images/block_diagram.jpg)
+![AI Helmet Prototype](images/block_diagram.png)
 ---
 
 ## 🎯 Project Objectives
