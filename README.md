@@ -314,6 +314,8 @@ At runtime, the MicroPython/OpenMV script running on Nicla Vision:
 
 This combination of real-time detection, visual overlays, and simple acoustic/visual alerts allows the Nicla Vision module to act as an **AI Helmet assistant** without any cloud processing.
 
+### System Prototype
+ ![Prototype](images/system_proto.png)
 ---
 
 
