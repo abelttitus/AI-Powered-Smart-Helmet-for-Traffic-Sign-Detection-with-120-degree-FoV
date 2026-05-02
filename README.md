@@ -312,33 +312,18 @@ At runtime, the MicroPython/OpenMV script running on Nicla Vision:
 
 * Initializes:
 
-  * The camera (RGB565, QVGA, 240×240 window)
-  * Buzzer pin
-  * RGB LEDs
-* Connects to Wi-Fi (for an optional browser-based **debug view**)
-* Continuously:
+  * Threee camera (RGB565, QVGA, 240×240 window)
+  * Continuously:
 
   * Captures frames from the onboard camera
   * Applies the same preprocessing used during training
   * Runs **FOMO inference** on each frame
   * Draws bounding boxes and overlays the detected label on the image
-  * Optionally streams the annotated frames via **MJPEG** to a browser on the same network (**debug/demo only**, not required for normal helmet use)
-  * Triggers:
-
-    * Different **LED colors** for specific classes (e.g., `Stop`, `Go_slow`, `No_parking`, `Speed_limit`)
+  * The predictions of each camera is send to Raspberry PI and it connects to a bluetooth speaker for audio feedback.
 
 This combination of real-time detection, visual overlays, and simple acoustic/visual alerts allows the Nicla Vision module to act as an **AI Helmet assistant** without any cloud processing.
 
 ---
-
-## 🪖 AI Helmet Prototype
-
-The hardware prototype consists of:
-
-* An **Arduino Nicla Vision** mounted on top of a **standard two-wheeler helmet**
-* An **off-the-shelf USB power bank** fixed to the helmet or carried by the rider
-
-The setup is compact and light enough that the helmet can be worn comfortably during real-world tests.
 
 
 ## 🎬 Demo (Real-Time Detection)
@@ -347,34 +332,23 @@ Below are example frames from the real-time detection pipeline running on the AI
 
 
 ---
+## Achievements
+* 92.6% F1 score on 5-class traffic sign detection
+* int8 quantized FOMO model running at 61ms inference
+* 3-camera coverage with USB serial pipeline to Pi
+* Priority-based audio announcement via Bluetooth
+* Deduplication to prevent repeated announcements
 
-
+---
 ## Planned Improvements
 
 In future iterations, we plan to:
 
-* Design a **custom 3D-printed enclosure** integrating:
-
-  * Nicla Vision
-  * Power bank
-  * Wiring and button
-* Make the module:
-
-  * More **aesthetic**
-  * More **durable**
-  * Easier to mount on a wide range of commercial helmets
-
-We also aim to extend the AI Helmet with:
-
-* Support for **more traffic signs**
-* **Real-time OCR** on place boards and speed signs, plus **speech output**
-* **Audio sensing** to understand the surrounding environment (sirens, honks, approaching vehicles, etc.)
-* Integration of additional **environmental and proximity sensors**, such as:
-
-  * Air-quality and light sensors
-  * Radar, lidar, and ultrasonic sensors
-
-These extensions will progressively enable **richer ADAS-style features** for riders, turning the AI Helmet into a **multi-sensor safety and awareness platform**.
+* Upgrade to Raspberry Pi 5 + Hailo NPU for faster inference
+* Expand dataset with more Indian road sign classes
+* Add GPS tagging to log sign locations
+* Helmet integration with vibration haptic alerts
+* Natural TTS voice (gTTS) with internet connectivity
 
 ---
 
