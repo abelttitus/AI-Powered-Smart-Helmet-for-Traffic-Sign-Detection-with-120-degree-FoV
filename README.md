@@ -11,7 +11,7 @@ This Edge Impulse project implements a real-time, high PoV, on-device road sign 
 
 - **Fully on-device Edge AI** – Detection and alerts run entirely on the [Arduino Nicla Vision](https://store.arduino.cc/products/nicla-vision) using TinyML + FOMO, eliminating the need for cloud connectivity or smartphone support for core operation.
 
-- **Compact yet high-performance model** – Uses a **FOMO MobileNetV2 0.35**, **INT8 quantized**, occupying ~**81.3 KB flash** and ~**137.7 KB RAM**, while achieving ~**61 ms inference time per frame** (~**16.3 FPS**) for smooth real-time detection.
+- **Compact yet high-performance model** – Uses a **FOMO MobileNetV2 0.35**, **INT8 quantized**, occupying ~**81.3 KB flash** and ~**137.7 KB RAM**, while achieving **61 ms inference time per frame** (**16.3 FPS**) for smooth real-time detection.
 
 - **Wide field-of-view perception** – A **120° field of view (FoV)** is achieved using a **three-camera setup**, significantly improving environmental awareness compared to a single forward-facing camera.
 
