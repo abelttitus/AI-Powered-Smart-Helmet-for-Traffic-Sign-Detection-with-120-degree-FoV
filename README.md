@@ -337,6 +337,13 @@ Below are example frames from the real-time detection pipeline running on the AI
 * Deduplication to prevent repeated announcements
 
 ---
+
+## Challenges
+*Multi-camera synchronization for 120° FoV
+*Edge AI resource constraints - Arduino Nicla Vision
+*Robustness in real-world conditions
+*Low-latency audio feedback
+---
 ## Planned Improvements
 
 In future iterations, we plan to:
